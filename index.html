@@ -13,14 +13,13 @@
   --bg:#0D0D0D;--bg2:#141414;--bg3:#1C1C1C;--bg4:#252525;
   --border:#2A2A2A;--text:#F0F0F0;--text2:#999;--text3:#555;
   --push:#E94560;--pull:#2980B9;--legs:#27AE60;--upper:#F5A623;
-  --red:#E74C3C;--green:#2ECC71;
-  --font:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;
+  --checkin:#9B59B6;--font:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;max-width:480px;margin:0 auto;padding-bottom:80px;overflow-x:hidden}
 .screen{display:none}.screen.active{display:block}
 .top-bar{display:flex;align-items:center;justify-content:space-between;padding:52px 20px 16px;border-bottom:1px solid var(--border)}
 .top-bar h1{font-size:22px;font-weight:800;letter-spacing:-0.03em}
-.top-bar .sub{font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.sub{font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .badge{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--text2)}
 .section{padding:20px 20px 0}
 .section-label{font-size:11px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase;margin-bottom:12px}
@@ -46,11 +45,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .set-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
 .set-num{width:32px;height:44px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text3);flex-shrink:0}
 .input-group{flex:1}
-.input-group input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px;color:var(--text);font-size:20px;font-weight:700;font-family:var(--font);text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s}
+.input-group input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px;color:var(--text);font-size:20px;font-weight:700;font-family:var(--font);text-align:center;outline:none;-webkit-appearance:none;transition:border-color 0.15s}
 .input-group input:focus{border-color:#555}
 .input-label{font-size:10px;color:var(--text3);letter-spacing:0.1em;text-align:center;margin-top:4px;text-transform:uppercase}
 .btn-row{padding:16px 20px;display:flex;gap:10px}
-.btn{flex:1;padding:15px;border-radius:12px;font-size:14px;font-weight:700;font-family:var(--font);letter-spacing:0.04em;cursor:pointer;border:2px solid transparent;transition:transform 0.1s,opacity 0.1s;text-transform:uppercase}
+.btn{flex:1;padding:15px;border-radius:12px;font-size:14px;font-weight:700;font-family:var(--font);letter-spacing:0.04em;cursor:pointer;border:2px solid transparent;transition:transform 0.1s;text-transform:uppercase}
 .btn:active{transform:scale(0.97)}
 .btn-primary{color:#fff}
 .btn-outline{background:transparent;color:var(--text2);border-color:var(--border)}
@@ -89,11 +88,36 @@ textarea.notes-input:focus{border-color:#555}
 .scrollable{padding-bottom:80px}
 .empty-state{text-align:center;padding:48px 20px;color:var(--text3)}
 .empty-icon{font-size:40px;margin-bottom:12px}
-.save-banner{margin:0 20px 16px;background:#27AE6015;border:1px solid #27AE6040;border-radius:10px;padding:12px 16px}
-.save-banner-title{font-size:12px;font-weight:700;color:#27AE60;margin-bottom:6px;letter-spacing:0.04em}
-.save-banner-text{font-size:11px;color:var(--text2);line-height:1.6}
 .week-header{margin:0 20px 8px;padding:8px 0;border-bottom:1px solid var(--border)}
 .week-label{font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase}
+
+/* CHECK-IN STYLES */
+.checkin-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 18px 16px 22px;margin-bottom:10px;position:relative;overflow:hidden;cursor:pointer;transition:background 0.1s}
+.checkin-card:active{background:var(--bg3)}
+.checkin-row{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.checkin-label{font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
+.checkin-input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-size:15px;font-family:var(--font);outline:none;transition:border-color 0.15s}
+.checkin-input:focus{border-color:#9B59B6}
+.habit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.habit-btn{padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:12px;font-weight:600;font-family:var(--font);cursor:pointer;text-align:center;transition:all 0.1s;line-height:1.4}
+.habit-btn:active{transform:scale(0.97)}
+.habit-btn.yes{background:#27AE6020;border-color:#27AE60;color:#27AE60}
+.habit-btn.no{background:#E9456020;border-color:#E94560;color:#E94560}
+.meal-block{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.meal-time{font-size:10px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.meal-input{width:100%;background:transparent;border:none;color:var(--text);font-size:14px;font-family:var(--font);outline:none;line-height:1.5;resize:none;padding:0}
+.protein-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.protein-label{font-size:11px;color:var(--text3)}
+.protein-input{width:70px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-size:13px;font-weight:700;font-family:var(--font);text-align:center;outline:none}
+.protein-unit{font-size:11px;color:var(--text3)}
+.total-protein-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.total-label{font-size:12px;color:var(--text2)}
+.total-value{font-size:22px;font-weight:800}
+.total-target{font-size:11px;color:var(--text3);margin-top:2px;text-align:right}
+.progress-protein{height:6px;background:var(--bg4);border-radius:3px;margin-top:8px;overflow:hidden}
+.progress-protein-fill{height:6px;border-radius:3px;transition:width 0.4s ease;background:#9B59B6}
+.checkin-hist-card{margin:0 20px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer}
+.checkin-hist-card:active{background:var(--bg3)}
 </style>
 </head>
 <body>
@@ -101,25 +125,11 @@ textarea.notes-input:focus{border-color:#555}
 <!-- HOME -->
 <div id="screen-home" class="screen active scrollable">
   <div class="top-bar">
-    <div>
-      <div class="sub">Gym Logger</div>
-      <h1>Emad's Tracker</h1>
-    </div>
+    <div><div class="sub">Gym Logger</div><h1>Emad's Tracker</h1></div>
     <div class="badge" id="session-count">0 sessions</div>
   </div>
-  <div class="section" style="margin-top:16px">
-    <div class="save-banner">
-      <div class="save-banner-title">💾 How to save your data permanently</div>
-      <div class="save-banner-text">
-        1. Save this HTML file to <strong style="color:var(--text)">Google Drive</strong><br>
-        2. Always open it from Google Drive in the <strong style="color:var(--text)">same browser on the same phone</strong><br>
-        3. Data is saved in your browser — never clears unless you manually clear browser data<br>
-        4. On iPhone: open in Safari → Share → Add to Home Screen
-      </div>
-    </div>
-  </div>
   <div class="section">
-    <div class="section-label">Select Today's Workout</div>
+    <div class="section-label">Today's Workout</div>
     <div class="day-card" onclick="startDay('Push')">
       <div class="accent-bar" style="background:var(--push)"></div>
       <div class="day-name" style="color:var(--push)">Push Day — Sunday</div>
@@ -158,9 +168,7 @@ textarea.notes-input:focus{border-color:#555}
     <div class="ex-name" id="ex-name"></div>
     <div class="ex-note" id="ex-note"></div>
     <div class="ex-prescription" id="ex-prescription"></div>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" id="progress-bar"></div>
-    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-bar"></div></div>
   </div>
   <div id="last-time-container"></div>
   <div class="sets-grid" id="sets-grid" style="margin-top:16px"></div>
@@ -172,9 +180,7 @@ textarea.notes-input:focus{border-color:#555}
 
 <!-- FINALIZE -->
 <div id="screen-finalize" class="screen scrollable">
-  <div class="top-bar">
-    <div><div class="sub">Almost done</div><h1>Session check-in</h1></div>
-  </div>
+  <div class="top-bar"><div><div class="sub">Almost done</div><h1>Session check-in</h1></div></div>
   <div class="finalize-section">
     <div class="finalize-label">Energy level (1–10)</div>
     <div class="energy-grid" id="energy-grid"></div>
@@ -188,7 +194,7 @@ textarea.notes-input:focus{border-color:#555}
   </div>
   <div class="finalize-section" style="margin-top:20px">
     <div class="finalize-label">Notes (optional)</div>
-    <textarea class="notes-input" id="session-notes" rows="3" placeholder="Any exercise that felt off, back feedback, what to improve next time..."></textarea>
+    <textarea class="notes-input" id="session-notes" rows="3" placeholder="Any exercise that felt off, back feedback, what to improve..."></textarea>
   </div>
   <div class="btn-row">
     <button class="btn btn-primary" id="save-btn" onclick="finishSession()" disabled>Save Session</button>
@@ -198,9 +204,7 @@ textarea.notes-input:focus{border-color:#555}
 
 <!-- SUMMARY -->
 <div id="screen-summary" class="screen scrollable">
-  <div class="top-bar">
-    <div><div class="sub">Session complete</div><h1 id="summary-day-title"></h1></div>
-  </div>
+  <div class="top-bar"><div><div class="sub">Session complete</div><h1 id="summary-day-title"></h1></div></div>
   <div style="padding:12px 20px 0;display:flex;gap:8px;flex-wrap:wrap" id="summary-tags"></div>
   <div class="summary-card" id="summary-exercises"></div>
   <div style="padding:8px 20px 12px"><div class="section-label">Copy & send to coach</div></div>
@@ -211,10 +215,111 @@ textarea.notes-input:focus{border-color:#555}
   </div>
 </div>
 
+<!-- DAILY CHECK-IN -->
+<div id="screen-checkin" class="screen scrollable">
+  <div class="top-bar">
+    <div><div class="sub">Daily log</div><h1>Today's Check-in</h1></div>
+    <div class="badge" id="checkin-date"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Protein Tracker</div>
+    <div class="total-protein-box">
+      <div>
+        <div class="total-label">Total protein today</div>
+        <div class="progress-protein"><div class="progress-protein-fill" id="protein-bar" style="width:0%"></div></div>
+      </div>
+      <div style="text-align:right">
+        <div class="total-value" id="total-protein-display">0g</div>
+        <div class="total-target">target: 130g</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:4px">What did you eat today?</div>
+
+    <div class="meal-block">
+      <div class="meal-time">Pre-gym / Morning</div>
+      <textarea class="meal-input" id="meal-morning" rows="2" placeholder="e.g. 2 dates + coffee, 3 boiled eggs + labneh..." oninput="updateProtein()"></textarea>
+      <div class="protein-row">
+        <span class="protein-label">Protein estimate:</span>
+        <input class="protein-input" type="number" inputmode="numeric" id="p-morning" placeholder="0" oninput="updateProtein()">
+        <span class="protein-unit">g</span>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <div class="meal-time">Mid-morning Snack</div>
+      <textarea class="meal-input" id="meal-snack" rows="2" placeholder="e.g. Greek yogurt + apple, handful nuts..." oninput="updateProtein()"></textarea>
+      <div class="protein-row">
+        <span class="protein-label">Protein estimate:</span>
+        <input class="protein-input" type="number" inputmode="numeric" id="p-snack" placeholder="0" oninput="updateProtein()">
+        <span class="protein-unit">g</span>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <div class="meal-time">Lunch</div>
+      <textarea class="meal-input" id="meal-lunch" rows="2" placeholder="e.g. Grilled chicken + rice + salad, shawarma..." oninput="updateProtein()"></textarea>
+      <div class="protein-row">
+        <span class="protein-label">Protein estimate:</span>
+        <input class="protein-input" type="number" inputmode="numeric" id="p-lunch" placeholder="0" oninput="updateProtein()">
+        <span class="protein-unit">g</span>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <div class="meal-time">Dinner</div>
+      <textarea class="meal-input" id="meal-dinner" rows="2" placeholder="e.g. Chicken + bamya + half plate rice..." oninput="updateProtein()"></textarea>
+      <div class="protein-row">
+        <span class="protein-label">Protein estimate:</span>
+        <input class="protein-input" type="number" inputmode="numeric" id="p-dinner" placeholder="0" oninput="updateProtein()">
+        <span class="protein-unit">g</span>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <div class="meal-time">Evening / Other</div>
+      <textarea class="meal-input" id="meal-other" rows="2" placeholder="e.g. Labneh on cracker, protein shake..." oninput="updateProtein()"></textarea>
+      <div class="protein-row">
+        <span class="protein-label">Protein estimate:</span>
+        <input class="protein-input" type="number" inputmode="numeric" id="p-other" placeholder="0" oninput="updateProtein()">
+        <span class="protein-unit">g</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:20px">
+    <div class="section-label">Daily Habits</div>
+    <div class="habit-grid">
+      <button class="habit-btn" id="h-sleep" onclick="toggleHabit('sleep')">🛏️ Sleep by 10:30?</button>
+      <button class="habit-btn" id="h-fifa" onclick="toggleHabit('fifa')">🎮 FIFA cutoff?</button>
+      <button class="habit-btn" id="h-water" onclick="toggleHabit('water')">💧 2.5L water?</button>
+      <button class="habit-btn" id="h-pregym" onclick="toggleHabit('pregym')">🍌 Pre-gym snack?</button>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:20px">
+    <div class="section-label">Sleep Time</div>
+    <input class="checkin-input" type="text" id="sleep-time" placeholder="e.g. 23:00, 01:30, 02:00">
+  </div>
+
+  <div class="section" style="margin-top:20px">
+    <div class="section-label">How do you feel today?</div>
+    <textarea class="notes-input" id="checkin-notes" rows="3" placeholder="Energy, stress, back, anything worth noting..."></textarea>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="saveCheckin()" style="background:#9B59B6;border-color:#9B59B6">Save Check-in</button>
+  </div>
+  <div style="padding:0 20px 8px">
+    <button class="btn btn-outline" onclick="copyCheckin()" id="checkin-copy-btn" style="width:100%">Copy & Send to Coach</button>
+  </div>
+</div>
+
 <!-- HISTORY -->
 <div id="screen-history" class="screen scrollable">
   <div class="top-bar">
-    <div><div class="sub">All sessions</div><h1>History</h1></div>
+    <div><div class="sub">All logs</div><h1>History</h1></div>
     <div class="badge" id="history-count"></div>
   </div>
   <div style="padding:16px 0 0" id="history-list"></div>
@@ -235,10 +340,25 @@ textarea.notes-input:focus{border-color:#555}
   </div>
 </div>
 
+<!-- CHECKIN DETAIL -->
+<div id="screen-checkin-detail" class="screen scrollable">
+  <div class="top-bar">
+    <div><div class="sub">Check-in detail</div><h1 id="cd-title"></h1></div>
+    <button class="badge" onclick="showHistoryScreen()" style="cursor:pointer;border:none">← Back</button>
+  </div>
+  <div class="copy-box" id="cd-copy-text" style="margin-top:20px"></div>
+  <div class="btn-row">
+    <button class="btn btn-outline" onclick="copyCheckinDetail()" id="cd-copy-btn">Copy & Send to Coach</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <div class="nav-tabs" id="nav-tabs">
   <button class="nav-tab active" id="nav-home" onclick="goHome()">
-    <span class="nav-icon">🏠</span>Today
+    <span class="nav-icon">🏠</span>Workout
+  </button>
+  <button class="nav-tab" id="nav-checkin" onclick="showCheckinScreen()">
+    <span class="nav-icon">📝</span>Daily Log
   </button>
   <button class="nav-tab" id="nav-history" onclick="showHistoryScreen()">
     <span class="nav-icon">📋</span>History
@@ -246,13 +366,13 @@ textarea.notes-input:focus{border-color:#555}
 </div>
 
 <script>
-const PROGRAM = {
+const PROGRAM={
   Push:{label:"Push Day",day:"Sunday",color:"#E94560",exercises:[
     {name:"Incline Dumbbell Press",sets:4,reps:"10–12",note:"Neutral grip, controlled tempo"},
     {name:"Flat Dumbbell Press",sets:3,reps:"10–12",note:"Full range of motion, no arch"},
     {name:"Cable Chest Fly",sets:3,reps:"12–15",note:"Chest tall, no rounding forward"},
     {name:"Seated DB Shoulder Press",sets:3,reps:"10–12",note:"Seated = back supported"},
-    {name:"Lateral Raises",sets:4,reps:"15",note:"6–7kg max, strict — no swinging"},
+    {name:"Lateral Raises",sets:4,reps:"15",note:"6–7kg MAX — strict, no swinging"},
     {name:"Tricep Pushdown",sets:3,reps:"12–15",note:"Elbows fixed, full extension"},
     {name:"Overhead Tricep Extension",sets:3,reps:"12",note:"Seated, controlled"},
   ]},
@@ -286,22 +406,26 @@ const PROGRAM = {
   ]}
 };
 
-const KEY = "emad_gym_v3";
+const KEY="emad_gym_v3";
+const CHECKIN_KEY="emad_checkin_v1";
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||{sessions:[]}}catch{return{sessions:[]}}}
+function loadCheckins(){try{return JSON.parse(localStorage.getItem(CHECKIN_KEY))||{checkins:[]}}catch{return{checkins:[]}}}
 function save(d){try{localStorage.setItem(KEY,JSON.stringify(d))}catch{}}
+function saveCheckins(d){try{localStorage.setItem(CHECKIN_KEY,JSON.stringify(d))}catch{}}
 
-let data = load();
-let state = {day:null,exIndex:0,setInputs:{},energy:null,backPain:null,currentExercises:[]};
+let data=load();
+let checkinData=loadCheckins();
+let state={day:null,exIndex:0,setInputs:{},energy:null,backPain:null,currentExercises:[]};
+let habitState={sleep:null,fifa:null,water:null,pregym:null};
 
 function showScreen(name){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('screen-'+name).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-  const navMap = {home:'nav-home',history:'nav-history',detail:'nav-history'};
-  const navEl = document.getElementById(navMap[name]||'nav-home');
+  const navMap={home:'nav-home',checkin:'nav-checkin',history:'nav-history',detail:'nav-history',checkin_detail:'nav-history'};
+  const navEl=document.getElementById(navMap[name]||'nav-home');
   if(navEl) navEl.classList.add('active');
-  const showNav = ['home','history','detail'].includes(name);
-  document.getElementById('nav-tabs').style.display = showNav ? 'flex' : 'none';
+  document.getElementById('nav-tabs').style.display=['exercise','finalize','summary'].includes(name)?'none':'flex';
   window.scrollTo(0,0);
 }
 
@@ -309,15 +433,15 @@ function formatDate(iso){
   const d=new Date(iso);
   return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'2-digit'});
 }
-
+function todayStr(){
+  return new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'2-digit'});
+}
 function getWeekLabel(iso){
-  const d=new Date(iso);
-  const now=new Date();
-  const diffDays=Math.floor((now-d)/(1000*60*60*24));
-  if(diffDays<7) return "This Week";
-  if(diffDays<14) return "Last Week";
-  const week=Math.ceil(diffDays/7);
-  return `${week} Weeks Ago`;
+  const d=new Date(iso);const now=new Date();
+  const diff=Math.floor((now-d)/(1000*60*60*24));
+  if(diff<7) return "This Week";
+  if(diff<14) return "Last Week";
+  return Math.ceil(diff/7)+" Weeks Ago";
 }
 
 function getLastSession(dayKey,exName){
@@ -326,10 +450,7 @@ function getLastSession(dayKey,exName){
   return prev.exercises.find(e=>e.name===exName);
 }
 
-function goHome(){
-  refreshHome();
-  showScreen('home');
-}
+function goHome(){refreshHome();showScreen('home')}
 
 function refreshHome(){
   const count=data.sessions.length;
@@ -340,22 +461,18 @@ function refreshHome(){
     el.textContent=n>0?'↑ '+n+' session'+(n!==1?'s':'')+' logged':'';
   });
   const recent=document.getElementById('recent-sessions');
-  const recents=[...data.sessions].reverse().slice(0,5);
+  const recents=[...data.sessions].reverse().slice(0,4);
   if(recents.length===0){
     recent.innerHTML='<div class="empty-state"><div class="empty-icon">🏋️</div><p>No sessions yet.<br>Start your first workout above.</p></div>';
     return;
   }
   recent.innerHTML=recents.map((s,i)=>{
-    const prog=PROGRAM[s.day];
-    const color=prog?prog.color:'#888';
+    const prog=PROGRAM[s.day];const color=prog?prog.color:'#888';
     const realIdx=data.sessions.length-1-i;
     const painTag=s.backPain?`<span class="tag" style="background:#E9456020;color:#E94560;border:1px solid #E9456040">Back pain</span>`:'';
     const energyTag=s.energy?`<span class="tag" style="background:${color}20;color:${color};border:1px solid ${color}40">⚡ ${s.energy}/10</span>`:'';
     return `<div class="hist-card" onclick="viewSession(${realIdx})">
-      <div class="hist-header">
-        <span class="hist-name" style="color:${color}">${prog?prog.label:s.day}</span>
-        <span class="hist-date">${formatDate(s.date)}</span>
-      </div>
+      <div class="hist-header"><span class="hist-name" style="color:${color}">${prog?prog.label:s.day}</span><span class="hist-date">${formatDate(s.date)}</span></div>
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">${energyTag}${painTag}<span style="font-size:11px;color:var(--text3)">${s.exercises?.length||0} exercises</span></div>
     </div>`;
   }).join('');
@@ -363,58 +480,42 @@ function refreshHome(){
 
 function startDay(dayKey){
   state={day:dayKey,exIndex:0,setInputs:{},energy:null,backPain:null,currentExercises:[]};
-  renderExercise();
-  showScreen('exercise');
+  renderExercise();showScreen('exercise');
 }
 
 function renderExercise(){
-  const prog=PROGRAM[state.day];
-  const exes=prog.exercises;
-  const ex=exes[state.exIndex];
-  const color=prog.color;
-  const idx=state.exIndex;
-  const total=exes.length;
-  const pct=((idx)/total*100).toFixed(0);
-
+  const prog=PROGRAM[state.day];const exes=prog.exercises;const ex=exes[state.exIndex];
+  const color=prog.color;const idx=state.exIndex;const total=exes.length;
   document.getElementById('ex-header').style.borderBottomColor=color;
   document.getElementById('ex-progress-label').textContent=`${prog.label} · Exercise ${idx+1} of ${total}`;
-  document.getElementById('ex-name').textContent=ex.name;
-  document.getElementById('ex-name').style.color=color;
+  document.getElementById('ex-name').textContent=ex.name;document.getElementById('ex-name').style.color=color;
   document.getElementById('ex-note').textContent=ex.note;
   document.getElementById('ex-prescription').textContent=`${ex.sets} sets × ${ex.reps} reps`;
-  document.getElementById('progress-bar').style.width=pct+'%';
+  document.getElementById('progress-bar').style.width=((idx)/total*100)+'%';
   document.getElementById('progress-bar').style.background=color;
-  document.getElementById('next-btn').style.background=color;
-  document.getElementById('next-btn').style.borderColor=color;
+  document.getElementById('next-btn').style.background=color;document.getElementById('next-btn').style.borderColor=color;
   document.getElementById('next-btn').textContent=idx<total-1?'Next →':'Finish ✓';
-
   const lastEx=getLastSession(state.day,ex.name);
   const lastContainer=document.getElementById('last-time-container');
   if(lastEx&&lastEx.sets?.some(s=>s.kg||s.reps)){
-    const badges=lastEx.sets.map((s,i)=>{
-      if(!s.kg&&!s.reps) return '';
-      return `<span class="last-set-badge" style="background:${color}20;color:${color};border:1px solid ${color}40">S${i+1}: ${s.kg||'—'}kg × ${s.reps||'—'}</span>`;
-    }).join('');
+    const badges=lastEx.sets.map((s,i)=>(!s.kg&&!s.reps)?'':
+      `<span class="last-set-badge" style="background:${color}20;color:${color};border:1px solid ${color}40">S${i+1}: ${s.kg||'—'}kg × ${s.reps||'—'}</span>`).join('');
     lastContainer.innerHTML=`<div class="last-box"><div class="last-label">Last time</div><div class="last-sets">${badges}</div></div>`;
   } else {
-    lastContainer.innerHTML=`<div class="first-time">First time logging this — set your baseline tonight.</div>`;
+    lastContainer.innerHTML=`<div class="first-time">First time logging this — set your baseline.</div>`;
   }
-
   const saved=state.setInputs[ex.name]||{};
   let html='';
   for(let i=0;i<ex.sets;i++){
-    const kg=saved[i]?.kg||'';
-    const reps=saved[i]?.reps||'';
+    const kg=saved[i]?.kg||'';const reps=saved[i]?.reps||'';
     html+=`<div class="set-row">
       <div class="set-num">${i+1}</div>
       <div class="input-group">
-        <input type="number" inputmode="decimal" placeholder="kg" value="${kg}"
-          oninput="updateSet('${ex.name.replace(/'/g,"\\'")}',${i},'kg',this.value)">
+        <input type="number" inputmode="decimal" placeholder="kg" value="${kg}" oninput="updateSet('${ex.name.replace(/'/g,"\\'")}',${i},'kg',this.value)">
         <div class="input-label">kg</div>
       </div>
       <div class="input-group">
-        <input type="number" inputmode="numeric" placeholder="reps" value="${reps}"
-          oninput="updateSet('${ex.name.replace(/'/g,"\\'")}',${i},'reps',this.value)">
+        <input type="number" inputmode="numeric" placeholder="reps" value="${reps}" oninput="updateSet('${ex.name.replace(/'/g,"\\'")}',${i},'reps',this.value)">
         <div class="input-label">reps</div>
       </div>
     </div>`;
@@ -422,67 +523,43 @@ function renderExercise(){
   document.getElementById('sets-grid').innerHTML=html;
 }
 
-function updateSet(exName,setIdx,field,val){
-  if(!state.setInputs[exName]) state.setInputs[exName]={};
-  if(!state.setInputs[exName][setIdx]) state.setInputs[exName][setIdx]={};
-  state.setInputs[exName][setIdx][field]=val;
+function updateSet(n,i,f,v){
+  if(!state.setInputs[n]) state.setInputs[n]={};
+  if(!state.setInputs[n][i]) state.setInputs[n][i]={};
+  state.setInputs[n][i][f]=v;
 }
 
 function saveCurrentExercise(){
-  const prog=PROGRAM[state.day];
-  const ex=prog.exercises[state.exIndex];
-  const sets=Array.from({length:ex.sets},(_,i)=>({
-    kg:state.setInputs[ex.name]?.[i]?.kg||'',
-    reps:state.setInputs[ex.name]?.[i]?.reps||'',
-  }));
-  state.currentExercises.push({name:ex.name,sets});
+  const ex=PROGRAM[state.day].exercises[state.exIndex];
+  state.currentExercises.push({name:ex.name,sets:Array.from({length:ex.sets},(_,i)=>({kg:state.setInputs[ex.name]?.[i]?.kg||'',reps:state.setInputs[ex.name]?.[i]?.reps||''}))});
 }
 
 function nextExercise(){
   saveCurrentExercise();
   const prog=PROGRAM[state.day];
-  if(state.exIndex<prog.exercises.length-1){
-    state.exIndex++;
-    renderExercise();
-    window.scrollTo(0,0);
-  } else {
-    showFinalizeScreen();
-  }
+  if(state.exIndex<prog.exercises.length-1){state.exIndex++;renderExercise();window.scrollTo(0,0);}
+  else showFinalizeScreen();
 }
 
-function exitToHome(){
-  if(confirm('Exit session? Progress will not be saved.')) goHome();
-}
+function exitToHome(){if(confirm('Exit session? Progress will not be saved.')) goHome();}
 
 function showFinalizeScreen(){
   state.energy=null;state.backPain=null;
-  const prog=PROGRAM[state.day];
-  const color=prog.color;
-  let html='';
-  for(let i=1;i<=10;i++){
-    html+=`<button class="energy-btn" id="energy-${i}" onclick="setEnergy(${i})">${i}</button>`;
-  }
+  const color=PROGRAM[state.day].color;
+  let html='';for(let i=1;i<=10;i++) html+=`<button class="energy-btn" id="energy-${i}" onclick="setEnergy(${i})">${i}</button>`;
   document.getElementById('energy-grid').innerHTML=html;
-  document.getElementById('pain-no').className='pain-btn';
-  document.getElementById('pain-yes').className='pain-btn';
-  document.getElementById('session-notes').value='';
-  document.getElementById('save-btn').disabled=true;
-  document.getElementById('save-btn').style.background=color;
-  document.getElementById('save-btn').style.borderColor=color;
+  document.getElementById('pain-no').className='pain-btn';document.getElementById('pain-yes').className='pain-btn';
+  document.getElementById('session-notes').value='';document.getElementById('save-btn').disabled=true;
+  document.getElementById('save-btn').style.background=color;document.getElementById('save-btn').style.borderColor=color;
   showScreen('finalize');
 }
 
 function setEnergy(val){
-  state.energy=val;
-  const prog=PROGRAM[state.day];
+  state.energy=val;const color=PROGRAM[state.day].color;
   document.querySelectorAll('.energy-btn').forEach((b,i)=>{
-    const active=i+1===val;
-    b.classList.toggle('active',active);
-    b.style.background=active?prog.color:'';
-    b.style.color=active?'#fff':'';
-    b.style.borderColor=active?prog.color:'';
-  });
-  checkSaveReady();
+    const a=i+1===val;b.classList.toggle('active',a);
+    b.style.background=a?color:'';b.style.color=a?'#fff':'';b.style.borderColor=a?color:'';
+  });checkSaveReady();
 }
 
 function setPain(val){
@@ -499,106 +576,209 @@ function checkSaveReady(){
 }
 
 function finishSession(){
-  const session={
-    day:state.day,
-    date:new Date().toISOString(),
-    exercises:state.currentExercises,
-    energy:state.energy,
-    backPain:state.backPain,
-    notes:document.getElementById('session-notes').value.trim(),
-  };
-  data.sessions.push(session);
-  save(data);
-  showSummaryScreen(session,false);
+  const session={day:state.day,date:new Date().toISOString(),exercises:state.currentExercises,energy:state.energy,backPain:state.backPain,notes:document.getElementById('session-notes').value.trim()};
+  data.sessions.push(session);save(data);showSummaryScreen(session);
 }
 
 function generateSummary(session){
   const prog=PROGRAM[session.day];
-  let t=`GYM SESSION LOG\n`;
-  t+=`${formatDate(session.date)} — ${prog?.label||session.day}\n`;
-  t+=`Energy: ${session.energy}/10 | Back Pain: ${session.backPain?'YES':'No'}\n\n`;
+  let t=`GYM SESSION LOG\n${formatDate(session.date)} — ${prog?.label||session.day}\nEnergy: ${session.energy}/10 | Back Pain: ${session.backPain?'YES':'No'}\n\n`;
   session.exercises?.forEach(ex=>{
     t+=`> ${ex.name}\n`;
-    ex.sets?.forEach((s,i)=>{
-      if(s.kg||s.reps) t+=`  Set ${i+1}: ${s.kg||'—'}kg x ${s.reps||'—'} reps\n`;
-    });
+    ex.sets?.forEach((s,i)=>{if(s.kg||s.reps) t+=`  Set ${i+1}: ${s.kg||'—'}kg x ${s.reps||'—'} reps\n`;});
   });
   if(session.notes) t+=`\nNotes: ${session.notes}`;
   return t;
 }
 
-function showSummaryScreen(session,isDetail){
-  const prog=PROGRAM[session.day];
-  const color=prog?.color||'#888';
+function showSummaryScreen(session){
+  const prog=PROGRAM[session.day];const color=prog?.color||'#888';
   document.getElementById('summary-day-title').textContent=prog?.label||session.day;
-  const tagsEl=document.getElementById('summary-tags');
-  tagsEl.innerHTML=`
+  document.getElementById('summary-tags').innerHTML=`
     <span class="tag" style="background:${color}20;color:${color};border:1px solid ${color}40">⚡ ${session.energy}/10</span>
     <span class="tag" style="${session.backPain?'background:#E9456020;color:#E94560;border:1px solid #E9456040':'background:#27AE6020;color:#27AE60;border:1px solid #27AE6040'}">${session.backPain?'Back pain':'No back pain'}</span>
-    <span class="tag" style="background:var(--bg3);color:var(--text2);border:1px solid var(--border)">${formatDate(session.date)}</span>
-  `;
+    <span class="tag" style="background:var(--bg3);color:var(--text2);border:1px solid var(--border)">${formatDate(session.date)}</span>`;
   document.getElementById('summary-exercises').innerHTML=session.exercises?.map((ex,i)=>{
     const badges=ex.sets?.map((s,j)=>`<span class="summary-badge">S${j+1}: ${s.kg||'—'}kg × ${s.reps||'—'}</span>`).join('');
-    const border=i<session.exercises.length-1?'':'border-bottom:none';
-    return `<div class="summary-ex" style="${border}"><div class="summary-ex-name">${ex.name}</div><div class="summary-sets">${badges}</div></div>`;
+    return `<div class="summary-ex" style="${i===session.exercises.length-1?'border-bottom:none':''}"><div class="summary-ex-name">${ex.name}</div><div class="summary-sets">${badges}</div></div>`;
   }).join('');
-  const summaryText=generateSummary(session);
-  document.getElementById('copy-box-text').textContent=summaryText;
+  document.getElementById('copy-box-text').textContent=generateSummary(session);
   document.getElementById('copy-btn').textContent='Copy Summary';
-  document.getElementById('done-btn').style.background=color;
-  document.getElementById('done-btn').style.borderColor=color;
+  document.getElementById('done-btn').style.background=color;document.getElementById('done-btn').style.borderColor=color;
   showScreen('summary');
 }
 
-let copyTimeout,detailCopyTimeout;
-function copyToClipboard(){
-  const text=document.getElementById('copy-box-text').textContent;
-  doCopy(text,()=>{
-    document.getElementById('copy-btn').textContent='Copied!';
-    clearTimeout(copyTimeout);
-    copyTimeout=setTimeout(()=>{document.getElementById('copy-btn').textContent='Copy Summary'},2500);
-  });
-}
-function copyDetail(){
-  const text=document.getElementById('detail-copy-text').textContent;
-  doCopy(text,()=>{
-    document.getElementById('detail-copy-btn').textContent='Copied!';
-    clearTimeout(detailCopyTimeout);
-    detailCopyTimeout=setTimeout(()=>{document.getElementById('detail-copy-btn').textContent='Copy Summary'},2500);
-  });
-}
+let ct,dct,cct,cdct;
+function copyToClipboard(){doCopy(document.getElementById('copy-box-text').textContent,()=>{document.getElementById('copy-btn').textContent='Copied!';clearTimeout(ct);ct=setTimeout(()=>{document.getElementById('copy-btn').textContent='Copy Summary'},2500)});}
+function copyDetail(){doCopy(document.getElementById('detail-copy-text').textContent,()=>{document.getElementById('detail-copy-btn').textContent='Copied!';clearTimeout(dct);dct=setTimeout(()=>{document.getElementById('detail-copy-btn').textContent='Copy Summary'},2500)});}
+function copyCheckin(){doCopy(generateCheckinSummary(),()=>{document.getElementById('checkin-copy-btn').textContent='Copied!';clearTimeout(cct);cct=setTimeout(()=>{document.getElementById('checkin-copy-btn').textContent='Copy & Send to Coach'},2500)});}
+function copyCheckinDetail(){doCopy(document.getElementById('cd-copy-text').textContent,()=>{document.getElementById('cd-copy-btn').textContent='Copied!';clearTimeout(cdct);cdct=setTimeout(()=>{document.getElementById('cd-copy-btn').textContent='Copy & Send to Coach'},2500)});}
 function doCopy(text,cb){
   if(navigator.clipboard){navigator.clipboard.writeText(text).then(cb)}
   else{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);cb();}
 }
 
-function showHistoryScreen(){
-  const listEl=document.getElementById('history-list');
-  document.getElementById('history-count').textContent=data.sessions.length+' total';
-  if(data.sessions.length===0){
-    listEl.innerHTML='<div class="empty-state"><div class="empty-icon">📋</div><p>No sessions logged yet.</p></div>';
+// ── CHECK-IN ──────────────────────────────────────────────────
+function showCheckinScreen(){
+  document.getElementById('checkin-date').textContent=todayStr();
+  const today=new Date().toDateString();
+  const existing=checkinData.checkins.find(c=>new Date(c.date).toDateString()===today);
+  if(existing){
+    document.getElementById('meal-morning').value=existing.meals?.morning||'';
+    document.getElementById('meal-snack').value=existing.meals?.snack||'';
+    document.getElementById('meal-lunch').value=existing.meals?.lunch||'';
+    document.getElementById('meal-dinner').value=existing.meals?.dinner||'';
+    document.getElementById('meal-other').value=existing.meals?.other||'';
+    document.getElementById('p-morning').value=existing.protein?.morning||'';
+    document.getElementById('p-snack').value=existing.protein?.snack||'';
+    document.getElementById('p-lunch').value=existing.protein?.lunch||'';
+    document.getElementById('p-dinner').value=existing.protein?.dinner||'';
+    document.getElementById('p-other').value=existing.protein?.other||'';
+    document.getElementById('sleep-time').value=existing.sleepTime||'';
+    document.getElementById('checkin-notes').value=existing.notes||'';
+    habitState={sleep:existing.habits?.sleep??null,fifa:existing.habits?.fifa??null,water:existing.habits?.water??null,pregym:existing.habits?.pregym??null};
   } else {
-    const reversed=[...data.sessions].reverse();
-    let html='';
-    let lastWeek='';
-    reversed.forEach((s,i)=>{
-      const prog=PROGRAM[s.day];
-      const color=prog?prog.color:'#888';
-      const realIdx=data.sessions.length-1-i;
-      const week=getWeekLabel(s.date);
-      if(week!==lastWeek){
-        html+=`<div class="week-header"><div class="week-label">${week}</div></div>`;
-        lastWeek=week;
+    ['meal-morning','meal-snack','meal-lunch','meal-dinner','meal-other'].forEach(id=>document.getElementById(id).value='');
+    ['p-morning','p-snack','p-lunch','p-dinner','p-other'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('sleep-time').value='';document.getElementById('checkin-notes').value='';
+    habitState={sleep:null,fifa:null,water:null,pregym:null};
+  }
+  updateHabitButtons();updateProtein();showScreen('checkin');
+}
+
+function toggleHabit(key){
+  habitState[key]=habitState[key]===true?false:habitState[key]===false?null:true;
+  updateHabitButtons();
+}
+
+function updateHabitButtons(){
+  const map={sleep:'h-sleep',fifa:'h-fifa',water:'h-water',pregym:'h-pregym'};
+  const labels={sleep:'🛏️ Sleep by 10:30?',fifa:'🎮 FIFA cutoff?',water:'💧 2.5L water?',pregym:'🍌 Pre-gym snack?'};
+  Object.keys(map).forEach(key=>{
+    const btn=document.getElementById(map[key]);
+    const val=habitState[key];
+    btn.className='habit-btn'+(val===true?' yes':val===false?' no':'');
+    btn.textContent=(val===true?'✅ ':val===false?'❌ ':'')+labels[key].replace(/^[^\s]+\s/,'').replace(/^./,c=>labels[key][0]+labels[key][1]+' ');
+    btn.textContent=labels[key]+(val===true?' ✅':val===false?' ❌':'');
+  });
+}
+
+function updateProtein(){
+  const ids=['morning','snack','lunch','dinner','other'];
+  const total=ids.reduce((sum,id)=>{const v=parseFloat(document.getElementById('p-'+id).value)||0;return sum+v;},0);
+  document.getElementById('total-protein-display').textContent=total+'g';
+  const pct=Math.min(total/130*100,100);
+  document.getElementById('protein-bar').style.width=pct+'%';
+  document.getElementById('protein-bar').style.background=total>=130?'#27AE60':total>=80?'#F5A623':'#9B59B6';
+}
+
+function saveCheckin(){
+  const today=new Date().toDateString();
+  const checkin={
+    date:new Date().toISOString(),
+    meals:{morning:document.getElementById('meal-morning').value,snack:document.getElementById('meal-snack').value,lunch:document.getElementById('meal-lunch').value,dinner:document.getElementById('meal-dinner').value,other:document.getElementById('meal-other').value},
+    protein:{morning:document.getElementById('p-morning').value,snack:document.getElementById('p-snack').value,lunch:document.getElementById('p-lunch').value,dinner:document.getElementById('p-dinner').value,other:document.getElementById('p-other').value},
+    habits:habitState,
+    sleepTime:document.getElementById('sleep-time').value,
+    notes:document.getElementById('checkin-notes').value.trim(),
+  };
+  const idx=checkinData.checkins.findIndex(c=>new Date(c.date).toDateString()===today);
+  if(idx>=0) checkinData.checkins[idx]=checkin;
+  else checkinData.checkins.push(checkin);
+  saveCheckins(checkinData);
+  alert('Check-in saved!');
+}
+
+function generateCheckinSummary(){
+  const today=new Date().toDateString();
+  const c=checkinData.checkins.find(x=>new Date(x.date).toDateString()===today);
+  if(!c) return generateCheckinSummaryFromForm();
+  return formatCheckinSummary(c);
+}
+
+function generateCheckinSummaryFromForm(){
+  const ids=['morning','snack','lunch','dinner','other'];
+  const labels={morning:'Morning',snack:'Snack',lunch:'Lunch',dinner:'Dinner',other:'Evening'};
+  const total=ids.reduce((s,id)=>s+(parseFloat(document.getElementById('p-'+id).value)||0),0);
+  let t=`DAILY CHECK-IN\n${todayStr()}\n\n`;
+  t+=`MEALS & PROTEIN\n`;
+  ids.forEach(id=>{
+    const meal=document.getElementById('meal-'+id).value;
+    const p=document.getElementById('p-'+id).value;
+    if(meal) t+=`${labels[id]}: ${meal}${p?' ('+p+'g protein)':''}\n`;
+  });
+  t+=`Total Protein: ${total}g / 130g target\n\n`;
+  t+=`HABITS\n`;
+  t+=`Sleep by 10:30: ${habitState.sleep===true?'Yes':habitState.sleep===false?'No':'—'}\n`;
+  t+=`FIFA cutoff: ${habitState.fifa===true?'Yes':habitState.fifa===false?'No':'—'}\n`;
+  t+=`2.5L water: ${habitState.water===true?'Yes':habitState.water===false?'No':'—'}\n`;
+  t+=`Pre-gym snack: ${habitState.pregym===true?'Yes':habitState.pregym===false?'No':'—'}\n`;
+  const st=document.getElementById('sleep-time').value;
+  if(st) t+=`Sleep time: ${st}\n`;
+  const notes=document.getElementById('checkin-notes').value;
+  if(notes) t+=`\nNotes: ${notes}`;
+  return t;
+}
+
+function formatCheckinSummary(c){
+  const ids=['morning','snack','lunch','dinner','other'];
+  const labels={morning:'Morning',snack:'Snack',lunch:'Lunch',dinner:'Dinner',other:'Evening'};
+  const total=ids.reduce((s,id)=>s+(parseFloat(c.protein?.[id])||0),0);
+  let t=`DAILY CHECK-IN\n${formatDate(c.date)}\n\n`;
+  t+=`MEALS & PROTEIN\n`;
+  ids.forEach(id=>{
+    const meal=c.meals?.[id];const p=c.protein?.[id];
+    if(meal) t+=`${labels[id]}: ${meal}${p?' ('+p+'g protein)':''}\n`;
+  });
+  t+=`Total Protein: ${total}g / 130g target\n\n`;
+  t+=`HABITS\n`;
+  t+=`Sleep by 10:30: ${c.habits?.sleep===true?'Yes':c.habits?.sleep===false?'No':'—'}\n`;
+  t+=`FIFA cutoff: ${c.habits?.fifa===true?'Yes':c.habits?.fifa===false?'No':'—'}\n`;
+  t+=`2.5L water: ${c.habits?.water===true?'Yes':c.habits?.water===false?'No':'—'}\n`;
+  t+=`Pre-gym snack: ${c.habits?.pregym===true?'Yes':c.habits?.pregym===false?'No':'—'}\n`;
+  if(c.sleepTime) t+=`Sleep time: ${c.sleepTime}\n`;
+  if(c.notes) t+=`\nNotes: ${c.notes}`;
+  return t;
+}
+
+function showHistoryScreen(){
+  document.getElementById('history-count').textContent=(data.sessions.length+checkinData.checkins.length)+' total';
+  const listEl=document.getElementById('history-list');
+  const allItems=[
+    ...data.sessions.map(s=>({type:'session',data:s,date:new Date(s.date)})),
+    ...checkinData.checkins.map(c=>({type:'checkin',data:c,date:new Date(c.date)}))
+  ].sort((a,b)=>b.date-a.date);
+
+  if(allItems.length===0){
+    listEl.innerHTML='<div class="empty-state"><div class="empty-icon">📋</div><p>No logs yet.</p></div>';
+  } else {
+    let html='';let lastWeek='';
+    allItems.forEach((item,i)=>{
+      const week=getWeekLabel(item.date.toISOString());
+      if(week!==lastWeek){html+=`<div class="week-header"><div class="week-label">${week}</div></div>`;lastWeek=week;}
+      if(item.type==='session'){
+        const s=item.data;const prog=PROGRAM[s.day];const color=prog?prog.color:'#888';
+        const realIdx=data.sessions.indexOf(s);
+        const painTag=s.backPain?`<span class="tag" style="background:#E9456020;color:#E94560;border:1px solid #E9456040">Back pain</span>`:'';
+        const energyTag=s.energy?`<span class="tag" style="background:${color}20;color:${color};border:1px solid ${color}40">⚡ ${s.energy}/10</span>`:'';
+        html+=`<div class="hist-card" onclick="viewSession(${realIdx})">
+          <div class="hist-header"><span class="hist-name" style="color:${color}">${prog?prog.label:s.day}</span><span class="hist-date">${formatDate(s.date)}</span></div>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">${energyTag}${painTag}<span style="font-size:11px;color:var(--text3)">${s.exercises?.length||0} exercises</span></div>
+        </div>`;
+      } else {
+        const c=item.data;
+        const ids=['morning','snack','lunch','dinner','other'];
+        const total=ids.reduce((s,id)=>s+(parseFloat(c.protein?.[id])||0),0);
+        const pcolor=total>=130?'#27AE60':total>=80?'#F5A623':'#E94560';
+        const realIdx=checkinData.checkins.indexOf(c);
+        html+=`<div class="checkin-hist-card" onclick="viewCheckin(${realIdx})">
+          <div class="hist-header"><span class="hist-name" style="color:#9B59B6">📝 Daily Check-in</span><span class="hist-date">${formatDate(c.date)}</span></div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="tag" style="background:${pcolor}20;color:${pcolor};border:1px solid ${pcolor}40">${total}g protein</span>
+            ${c.habits?.sleep===true?'<span class="tag" style="background:#27AE6020;color:#27AE60;border:1px solid #27AE6040">Sleep ✅</span>':''}
+          </div>
+        </div>`;
       }
-      const painTag=s.backPain?`<span class="tag" style="background:#E9456020;color:#E94560;border:1px solid #E9456040">Back pain</span>`:'';
-      const energyTag=s.energy?`<span class="tag" style="background:${color}20;color:${color};border:1px solid ${color}40">⚡ ${s.energy}/10</span>`:'';
-      html+=`<div class="hist-card" onclick="viewSession(${realIdx})">
-        <div class="hist-header">
-          <span class="hist-name" style="color:${color}">${prog?prog.label:s.day}</span>
-          <span class="hist-date">${formatDate(s.date)}</span>
-        </div>
-        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">${energyTag}${painTag}<span style="font-size:11px;color:var(--text3)">${s.exercises?.length||0} exercises</span></div>
-      </div>`;
     });
     listEl.innerHTML=html;
   }
@@ -606,25 +786,28 @@ function showHistoryScreen(){
 }
 
 function viewSession(idx){
-  const session=data.sessions[idx];
-  if(!session) return;
-  const prog=PROGRAM[session.day];
-  const color=prog?.color||'#888';
+  const session=data.sessions[idx];if(!session) return;
+  const prog=PROGRAM[session.day];const color=prog?.color||'#888';
   document.getElementById('detail-title').textContent=prog?.label||session.day;
   document.getElementById('detail-tags').innerHTML=`
     <span class="tag" style="background:${color}20;color:${color};border:1px solid ${color}40">⚡ ${session.energy}/10</span>
     <span class="tag" style="${session.backPain?'background:#E9456020;color:#E94560;border:1px solid #E9456040':'background:#27AE6020;color:#27AE60;border:1px solid #27AE6040'}">${session.backPain?'Back pain':'No back pain'}</span>
-    <span class="tag" style="background:var(--bg3);color:var(--text2);border:1px solid var(--border)">${formatDate(session.date)}</span>
-  `;
+    <span class="tag" style="background:var(--bg3);color:var(--text2);border:1px solid var(--border)">${formatDate(session.date)}</span>`;
   document.getElementById('detail-exercises').innerHTML=session.exercises?.map((ex,i)=>{
     const badges=ex.sets?.map((s,j)=>`<span class="summary-badge">S${j+1}: ${s.kg||'—'}kg × ${s.reps||'—'}</span>`).join('');
-    const border=i<session.exercises.length-1?'':'border-bottom:none';
-    return `<div class="summary-ex" style="${border}"><div class="summary-ex-name">${ex.name}</div><div class="summary-sets">${badges}</div></div>`;
+    return `<div class="summary-ex" style="${i===session.exercises.length-1?'border-bottom:none':''}"><div class="summary-ex-name">${ex.name}</div><div class="summary-sets">${badges}</div></div>`;
   }).join('');
-  const summaryText=generateSummary(session);
-  document.getElementById('detail-copy-text').textContent=summaryText;
+  document.getElementById('detail-copy-text').textContent=generateSummary(session);
   document.getElementById('detail-copy-btn').textContent='Copy Summary';
   showScreen('detail');
+}
+
+function viewCheckin(idx){
+  const c=checkinData.checkins[idx];if(!c) return;
+  document.getElementById('cd-title').textContent=formatDate(c.date);
+  document.getElementById('cd-copy-text').textContent=formatCheckinSummary(c);
+  document.getElementById('cd-copy-btn').textContent='Copy & Send to Coach';
+  showScreen('checkin-detail');
 }
 
 refreshHome();
